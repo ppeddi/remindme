@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ppeddi.remindme</groupId>
+  <artifactId>remindme</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>remindme</name>
+  <url>http://maven.apache.org</url>
+  <developers>
+    <developer>
+      <id>ppeddi</id>
+      <name>Praveen Peddi</name>
+      <email>ppeddi@yahoo.com</email>
+      <organization>Myself</organization>
+      <roles>
+        <role />
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
+  <properties>
+    <easymock.version>3.1</easymock.version>
+    <jackson.version>1.6.0</jackson.version>
+    <javax.ws.rs.version>1.1.1</javax.ws.rs.version>
+    <junit.version>4.10</junit.version>
+    <log4j.version>1.2.16</log4j.version>
+    <org.apache.cxf.version>2.4.1</org.apache.cxf.version>
+    <org.springframework.version>3.1.0.RELEASE</org.springframework.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <slf4j.version>1.6.4</slf4j.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-domain</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-rest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-services</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-web</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-persistence</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ppeddi.remindme</groupId>
+        <artifactId>remindme-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>${easymock.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymockclassextension</artifactId>
+      <version>${easymock.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <!-- log4j is used by ssofilter -->
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <!-- test deps -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${org.springframework.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <modules>
+    <module>remindme-common</module>
+    <module>remindme-domain</module>
+    <module>remindme-persistence</module>
+    <module>remindme-rest</module>
+    <module>remindme-services</module>
+    <module>remindme-web</module>
+  </modules>
+</project>
