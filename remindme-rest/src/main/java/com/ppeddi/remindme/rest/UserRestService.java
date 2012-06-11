@@ -24,7 +24,7 @@ public interface UserRestService {
 
 	@PUT
 	@Path("/")
-	String updateUser(User user);
+	void updateUser(User user);
 
 	@GET
 	@Path("/{userId}")

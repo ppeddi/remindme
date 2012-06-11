@@ -18,7 +18,7 @@ import com.ppeddi.remindme.service.user.UserService;
  * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:remindme-service.xml" })
+@ContextConfiguration(locations = { "classpath:remindme-services.xml" })
 public class UserServiceImplTest {
 
 	@Resource

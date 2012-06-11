@@ -28,7 +28,7 @@
     <javax.ws.rs.version>1.1.1</javax.ws.rs.version>
     <junit.version>4.10</junit.version>
     <log4j.version>1.2.16</log4j.version>
-    <org.apache.cxf.version>2.4.1</org.apache.cxf.version>
+    <org.apache.cxf.version>2.6.1</org.apache.cxf.version>
     <org.springframework.version>3.1.0.RELEASE</org.springframework.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j.version>1.6.4</slf4j.version>
@@ -102,6 +102,11 @@
       <version>${slf4j.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>${org.springframework.version}</version>
@@ -109,6 +114,42 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <!--  incluce following spring dependencies due to version conflicts -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
     <!-- test deps -->
@@ -119,7 +160,20 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jboss-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <configuration>
+          <jbossHome>/opt/jboss</jbossHome>
+          <serverName>default</serverName>
+          <fileName>remindme-web/target/remindme-web-${project.version}.war</fileName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <modules>
     <module>remindme-common</module>
     <module>remindme-domain</module>
