@@ -24,13 +24,14 @@
     </filter-mapping>
          -->
     <!-- Handles all requests into the application -->
+    <!--
     <servlet>
       <description>RemindMe Spring MVC Dispatcher Servlet</description>
       <servlet-name>remindme</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
       <load-on-startup>1</load-on-startup>
     </servlet>
-
+-->
     <servlet id="restServlet">
       <description>RESTful Servlet Implementation - Uses CXF library</description>
       <display-name>CXF Servlet</display-name>
@@ -40,7 +41,7 @@
 	  	  <param-name>config-location</param-name>
 		  <param-value>classpath:remindme-rest-server.xml</param-value>
 	  </init-param>
-      <load-on-startup>2</load-on-startup>
+      <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
