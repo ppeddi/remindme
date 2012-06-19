@@ -20,5 +20,15 @@
       <groupId>com.ppeddi.remindme</groupId>
       <artifactId>remindme-domain</artifactId>
     </dependency>   
+    <dependency>
+      <groupId>com.ppeddi.remindme</groupId>
+      <artifactId>remindme-persistence</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.dozer</groupId>
+      <artifactId>dozer</artifactId>
+      <version>${dozer.version}</version>
+    </dependency>   
   </dependencies>
+  
 </project>
