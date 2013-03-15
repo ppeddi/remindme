@@ -91,12 +91,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <!-- log4j is used by ssofilter -->
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>${log4j.version}</version>
       <type>jar</type>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -128,7 +127,7 @@
       <artifactId>spring-core</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
-    <!--  incluce following spring dependencies due to version conflicts -->
+    <!--  include following spring dependencies due to version conflicts -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
